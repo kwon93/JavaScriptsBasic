@@ -19,3 +19,4 @@ a();
 c();
 
 //a->b->c->c 호출
+//scopeChain
