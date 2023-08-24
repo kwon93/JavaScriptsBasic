@@ -1,0 +1,272 @@
+* {
+    box-sizing: border-box;
+  }
+
+body{
+    margin: 0;
+    font-family: 'Ubuntu', sans-serif;
+    width: 100%;
+}
+
+.support{
+    margin-left: 20px;
+    list-style: none;
+    color: black;
+}
+.navBar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid gray;
+    height: 110px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.logo{
+    margin-left: 20px;
+}
+.navBar_logo{
+    margin-left: 25px;
+    color: black;
+    display: flex;
+    font-size: 40px;
+}
+
+.navBar_menu{
+    color: black;
+    display: flex;
+    list-style: none;
+    padding-left: 0px;
+    margin-left: 100px;
+}
+
+.navBar_menu li {
+    color: black;
+    padding: 8px 12px;
+    font-size: 35px;
+    margin: 0 15px 0 15px;
+    
+}
+
+.fa-truck-fast{
+    margin-left: 10px;
+}
+
+.fa-cart-shopping,.fa-handshake{
+    display: flex;
+    font-size: 30px;
+}
+
+.navBar_members{
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    margin-right: 30px;
+}
+
+
+.navBar_members li:first-child::after{
+    content: "";
+    display: inline;
+    position: absolute;
+    top: 0px;
+}
+
+.navBar_members li{
+    color: black;
+    margin: 10px;
+}
+
+article{
+  height: 100%;
+}
+
+footer{
+    height: 150px;
+    border-top: 1px solid gray;
+}
+
+
+.img_article ul{
+    list-style: none;
+}
+
+img{
+    height: 500px;
+    width: 550px;
+}
+
+.bannerBtnL, .bannerBtnR{
+    display: inline;
+    position: absolute;
+    background: none;
+    border: 1px solid #333232;
+    color: rgb(24, 24, 24);
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 50px;
+    cursor: pointer;
+    
+}
+
+
+.bannerBtnL{
+    top: 400px;
+    margin-left: 100px;
+}
+
+.bannerBtnR{
+    top: 400px;
+    right: 100px;
+}
+
+.carousel-wrapper {
+    width: 700px;
+    height: 600px;
+    margin: 100px auto;
+  }
+  
+  .carousel-wrapper > .carousel {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    
+  }
+  
+  .carousel-wrapper > .carousel > img {
+    width: 900px;
+    height: 550px;
+  }
+
+  footer{
+    margin-top: 50px;
+    text-align: center;
+  }
+
+  .cImg{
+    display: none;
+    transition: all 0.5s ease-out;
+
+  }
+
+  .active{
+    display: block;
+
+  }
+
+  .thumbnail_img{
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .products{
+    width: 300px;
+  }
+
+  .products img{
+    width: 300px;
+    height: 300px;
+  }
+
+  table {
+    margin: 100px auto;
+    border-collapse: collapse;
+    width: 100%;
+    border-bottom: 1px solid black;
+    width: 800px;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #e9e6e6;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #f2f2f2;
+}
+
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.page-link {
+    padding: 6px 12px;
+    border: 1px solid #ddd;
+    margin: 0 3px;
+    cursor: pointer;
+}
+
+.page-link:hover {
+    background-color: #f2f2f2;
+}
+
+.right_contents, .comment-form{
+    margin-left: 100px;
+}
+
+.list-btn{
+    border: 1px solid #000;
+    padding: 3px 10px 3px 10px;
+    border-radius: 5px;
+    margin-right: 10px;
+    
+}
+
+.list-btn:hover{
+
+    background-color: #f2f2f2;
+}
+
+textarea {
+    width: 700px;
+    height: 6.25em;
+    border: none;
+    resize: none;
+  }
+
+@media (max-width: 768px) {
+    .navBar_logo {
+        margin-left: 10px;
+        font-size: 24px;
+    }
+
+    .navBar_menu {
+        display: none;
+    }
+
+    .navBar_menu.active {
+        display: flex;
+    }
+
+    .navBar_members {
+        margin-right: 10px;
+    }
+
+    .carousel img {
+        max-width: 100%;
+    }
+
+    .thumbnail_img {
+        justify-content: center;
+    }
+
+    .products {
+        width: 90%;
+    }
+}
