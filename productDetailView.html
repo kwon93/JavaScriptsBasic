@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MultiplexShop</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navBar">
+        <div class="navBar_logo">
+            <a href="main.html">
+                <i class="fa-brands fa-drupal"></i>
+                <span class="logo">S H O P</span>
+            </a>
+        </div>
+
+        <ul class="navBar_menu">
+            <li style="color: black;"><a href="">A L L </a></li>
+            <li style="color: black;"><a href="">F O O D</a></li>
+            <li style="color: black;"><a href="">S T U F F</a></li>
+        </ul>
+
+        <ul class="navBar_members">
+            <li>
+                <a href="#" class="iconA">
+                    <i class="fa-solid fa-cart-shopping"
+                        style="display: block; text-align: center; line-height: 40px;"></i>
+                    <span>Cart</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="iconA">
+                    <i class="fa-solid fa-handshake"
+                        style="color: black; display: block; text-align: center; line-height: 40px;"></i>
+                    <span>Support</span>
+                </a>
+            </li>
+            <li><a href="#">Join</a></li>
+            <li><a href="#">Login</a></li>
+            <li><a href="#">MyPage</a></li>
+        </ul>
+    </nav>
+    <!-- Nav Bar -->
+
+
+
+    <article id="article">
+        <div class="proudct">
+            <div class="product_btns">
+                <button>M O D I F Y</button>
+                <button>D E L E T E</button>
+                <button>L I S T </button>
+            </div>
+            <div class="detail_box">
+                <div class="product_img">
+                    <img src="/img/KakaoTalk_Photo_2023-08-24-17-31-37 009.jpeg" alt="">
+                </div>
+                <div class="product_info">
+                    <p class="product_name">너무 좋아 보이는 향수 </p>
+
+                    <select class="product_select">
+                        <option>- SELECT 1 -</option>
+                        <option>xxx</option>
+                        <option>xxxx</option>
+                        <option>xxxxx</option>
+                    </select>
+                    <br>
+
+                    <select class="product_select">
+                        <option>- SELECT 1 -</option>
+                        <option>xxx</option>
+                        <option>xxxx</option>
+                        <option>xxxxx</option>
+                    </select>
+                    <br>
+                    <button class="minusBtn"><</button> <span class="quantity" style="font-size: 40px; vertical-align: middle;">1</span> <button class="plusBtn">></button>
+                    <p class="price" style="display: inline-block;">30000</p> <span style="font-size: 16px;">원</span>
+
+                </div>
+            </div>
+            <div class="product_info_img">
+                <img src="/img/KakaoTalk_Photo_2023-08-24-17-31-37 009.jpeg" alt="">
+                <p>정말 좋은 향수네요.</p>
+
+            </div>
+        </div>
+    </article>
+
+    <!-- article -->
+
+
+    <footer id="footer">
+        <div>
+            <p>이곳은 footer 입니다.</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. <br>
+                Temporibus, explicabo provident. Explicabo incidunt nesciunt perferendis optio, <br>
+                recusandae maiores quam suscipit consequatur.</p>
+        </div>
+    </footer>
+    <!-- footer -->
+
+    <script src="https://kit.fontawesome.com/d2cac4190c.js" crossorigin="anonymous"></script>
+    <script>
+        let quantity = document.querySelector('.quantity');
+        let plusBtn = document.querySelector('.plusBtn');
+        let minusBtn = document.querySelector('.minusBtn');
+        let price = document.querySelector('.price');
+        let q = 1;
+        let qinit = document.querySelector('.price')
+        const plusq = parseInt(qinit.textContent);
+
+        plusBtn.addEventListener('click', e => {
+        
+            if (q < 10) {
+                ++q;
+                quantity.innerHTML = q;
+                plusTotalPrice();
+            }else{
+                alert("구매 개수를 초과하셨습니다.")
+            }
+
+            
+        })
+
+        minusBtn.addEventListener('click', e => {
+            if (q > 1) {
+                --q;
+                quantity.innerHTML = q;
+                minusTotalPrice();
+            }
+        })
+
+        function plusTotalPrice() {
+            let totalPrice = parseInt(price.textContent) + plusq;
+            console.log(totalPrice);
+            price.innerHTML = totalPrice;
+        }
+
+        function minusTotalPrice() {
+            let totalPrice = parseInt(price.textContent) - plusq;
+            console.log(totalPrice);
+            price.innerHTML = totalPrice;
+        }
+    </script>
+
+</body>
+
+</html>
