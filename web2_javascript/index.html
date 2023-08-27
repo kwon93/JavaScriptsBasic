@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+  <title>WEB1 - Welcome</title>
+  <meta charset="utf-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="colors.js"></script>
+</head>
+<body>
+  <h1><a href="index.html">WEB</a></h1>
+  <input id="night_day" type="button" value="night" onclick="
+    nightDayHandler(this);
+  ">
+  <ol id="nav">
+  </ol>
+  <article>
+
+  </article>
+
+  <script>
+    function ajax(name){
+      fetch(name).then(function(res){
+          res.text().then(function(text){
+            document.querySelector('article').innerHTML = text;
+          })
+        })
+    }
+
+    if(location.hash){
+      ajax(location.hash.substring(2))
+    }else{
+      ajax('welcome')
+    }
+
+      fetch('list').then(function(res){
+          res.text().then(function(text){
+            //<li><a href="#!ajax" onclick="ajax('ajax');">ajax</a></li>
+            console.log(text);
+            let items = text.split(',');
+            console.log(items);
+            var i = 0;
+            tags = '';
+            while(i < items.length){
+                var item = items[i];
+                var tag = '<li><a href="#!'+item+'" onclick="ajax(\''+item+'\')">'+item+'</a></li>';
+                console.log(tag);
+                tags = tags + tag;
+                i = i + 1;
+            }
+            document.querySelector('#nav').innerHTML = tags;
+          })
+        })
+  </script>
+</body>
+</html>
